@@ -34,7 +34,10 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    "env.d.ts",
+    "shims.d.ts",
+    "components.d.ts"
   ],
   "exclude": [
     "node_modules"
