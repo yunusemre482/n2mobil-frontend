@@ -4,7 +4,7 @@
         :class="{ 'bg-primary': !showMenu, 'bg-primary': showMenu }"
     >
         <div
-            class="container px-4 mx-auto flex flex-wrap items-center justify-between max-w-sm"
+            class="container mx-auto flex flex-wrap items-center justify-between max-w-sm"
         >
             <div
                 class="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start"
@@ -24,16 +24,18 @@
                 </button>
             </div>
             <div
-                :class="{ hidden: !showMenu, flex: showMenu }"
-                class="lg:flex lg:flex-grow items-center"
+                class="lg:flex lg:flex-grow items-center w-full bg-inherit gap-2"
             >
-                <ul class="flex flex-col lg:flex-row list-none ml-auto">
+                <ul class="flex flex-col list-none w-full bg-none gap-2">
                     <SideBarItem
                         v-for="route in routes"
                         :key="route.title"
                         :title="route.title"
                         :route="route.route"
-                    />
+                        :icon="route.icon"
+                    >
+                        <template #icon> {{ icon }}</template>
+                    </SideBarItem>
                 </ul>
             </div>
         </div>
@@ -42,6 +44,13 @@
 
 <script>
 import SideBarItem from "@/components/sidebar/SideBarItem.vue";
+import {
+    IconUsers,
+    IconNotebook,
+    IconCheckupList,
+    IconPhotoHeart,
+} from "@tabler/icons-vue";
+
 export default {
     components: {
         SideBarItem,
@@ -50,9 +59,10 @@ export default {
         return {
             showMenu: false,
             routes: [
-                { title: "Users", route: "users" },
-                { title: "Posts", route: "posts" },
-                { title: "Albums", route: "albums" }
+                { title: "Users", route: "users", icon: IconUsers },
+                { title: "Posts", route: "posts", icon: IconNotebook },
+                { title: "Albums", route: "albums", icon: IconPhotoHeart },
+                { title: "Todos", route: "todos", icon: IconCheckupList },
             ],
         };
     },
