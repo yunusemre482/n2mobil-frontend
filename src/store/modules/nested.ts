@@ -1,19 +1,19 @@
 interface NestedState {
-	foo: string
+    foo: string;
 }
 
 interface NestedGetters {
-	twoBars: (state: NestedState) => string
+    twoBars: (state: NestedState) => string;
 }
 
 const nestedModule = {
-	namespaced: true,
-	state: (): NestedState => ({
-		foo: 'bar',
-	}),
-	getters: {
-		twoBars: (state: NestedState): string => state.foo.repeat(2),
-	},
-}
+    namespaced: true,
+    state: (): NestedState => ({
+        foo: "bar",
+    }),
+    getters: {
+        twoBars: (state: NestedState): string => state.foo.repeat(2),
+    },
+};
 
-export default nestedModule
+export default nestedModule;

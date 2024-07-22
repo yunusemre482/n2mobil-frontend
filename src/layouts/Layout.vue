@@ -1,19 +1,17 @@
 // create layout for navbar and main section
 
 <template>
-	<div>
-		<nav-bar></nav-bar>
-		<main>
-			<slot></slot>
-		</main>
-	</div>
+    <side-bar />
+    <main>
+        <slot></slot>
+    </main>
 </template>
 
 <script>
-import NavBar from '@/components/navbar/NavBar.vue'
+import SideBar from "@/components/sidebar/SideBar.vue";
 export default {
-	components: { NavBar },
-}
+    components: { SideBar },
+};
 </script>
 
 <style></style>
