@@ -22,41 +22,8 @@ export type User = {
 	}
 }
 
-export type Todo = {
-	userId: number
-	id: number
-	title: string
-	completed: boolean
-}
 
-export type Post = {
-	userId: number
-	id: number
-	title: string
-	body: string
-}
 
-export type Comment = {
-	postId: number
-	id: number
-	name: string
-	email: string
-	body: string
-}
-
-export type Album = {
-	userId: number
-	id: number
-	title: string
-}
-
-export type Photo = {
-	albumId: number
-	id: number
-	title: string
-	url: string
-	thumbnailUrl: string
-}
 
 export type State = {
 	users: User[]

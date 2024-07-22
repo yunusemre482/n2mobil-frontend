@@ -3,8 +3,8 @@
     "useTabs": true,
     "singleQuote": true,
     "semi": false,
-    "trailingComma": "all",
-    "bracketSameLine": false,
+    "trailingComma": "none",
+    "bracketSameLine": true,
     "extends": [
         "plugin:prettier/recommended"
     ]
