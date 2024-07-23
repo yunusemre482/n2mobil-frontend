@@ -1,10 +1,15 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
     content: [],
     theme: {
         extend: {
+            boxShadow: (theme) => ({
+                DEFAULT: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+                profile: "0px 0px 48px 0px #55555540",
+            }),
             fontFamily: {
                 poppins: ["Poppins", "sans-serif"],
+                roboto: ["Roboto", "sans-serif"],
             },
             fontWeight: {
                 light: 300,
@@ -12,6 +17,9 @@ module.exports = {
                 medium: 500,
                 semibold: 600,
                 bold: 700,
+            },
+            accentColor: {
+                purple: "#4F359B",
             },
             fontSize: {
                 xxs: "0.625rem",
@@ -29,6 +37,17 @@ module.exports = {
                 "8xl": "6rem",
                 "9xl": "8rem",
             },
+            borderColor: (theme) => ({
+                ...theme("colors"),
+                primary: "#FF6C00",
+                title: "#26303E",
+                subtitle: "#5C6672",
+                border: "#D8D9DD",
+                purple: "#4F359B",
+                gray: "rgba(0,0,0,0.45)",
+                "gray-2": "#485B69",
+                "gray-light": "#F5F5F5",
+            }),
             backgroundColor: (theme) => ({
                 ...theme("colors"),
                 primary: "#F5F5F5",
@@ -37,6 +56,7 @@ module.exports = {
                 bg: "#F5F5F5",
                 "bg-light": "#FFFFFF",
                 "bg-dark": "#E0E0E0",
+                purple: "#4F359B",
             }),
             textColor: (theme) => ({
                 ...theme("colors"),
@@ -45,6 +65,11 @@ module.exports = {
                 subtitle: "#5C6672",
                 border: "#D8D9DD",
                 purple: "#4F359B",
+                gray: "rgba(0,0,0,0.45)",
+                "gray-2": "#485B69",
+                "gray-light": "#F5F5F5",
+                icon: "#313E50",
+                "black-title":"#26303E"
             }),
             colors: {
                 bg: {
@@ -98,6 +123,9 @@ module.exports = {
                     800: "#212121",
                     900: "#000000",
                 },
+                icon:{
+                    DEFAULT:"#26303E"
+                }
             },
         },
     },
