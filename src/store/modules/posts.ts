@@ -77,7 +77,7 @@ export const actions    = {
             commit(SET_LOADING, false);
         }
 
-        commit(SET_POSTS, response.data);
+        commit(SET_COMMENTS, response.data);
         commit(SET_LOADING, false);
     },
     [RESET_STATE]({ commit }: any) {

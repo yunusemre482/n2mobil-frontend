@@ -1,6 +1,6 @@
 <template>
   <div class="flex w-full max-h-min flex-col p-5 overflow-hidden bg-inherit  gap-10">
-    <go-home />
+    <go-home text="Go Home" />
     <div class="container mx-auto overflow-hidden">
       <PostList :posts="posts"/>
     </div>
@@ -15,7 +15,7 @@ import store from "@/store";
 import {FETCH_POSTS} from "@/store/actions";
 import PostList from "@/components/post/PostList.vue";
 import TodoList from "@/components/todo/TodoList.vue";
-import GoHome from "@/components/GoHome.vue";
+import GoHome from "@/components/GoBack.vue";
 
 export default defineComponent({
   name: "Posts",
@@ -47,6 +47,11 @@ export default defineComponent({
 
     console.log("posts:", this.posts);
   },
+  beforeUnmount() {
+    // clear sates
+
+
+  }
 });
 </script>
 

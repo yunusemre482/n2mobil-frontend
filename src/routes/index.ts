@@ -23,6 +23,11 @@ export const routes: Array<RouteRecordRaw> = [
         name: "Albums",
         component: () => import("@/views/Albums.vue"),
     },
+    {
+        path:'/albums/:albumId/photos',
+        name:'Photos',
+        component: () => import("@/views/Photos.vue"),
+    }
 ];
 
 const router = createRouter({

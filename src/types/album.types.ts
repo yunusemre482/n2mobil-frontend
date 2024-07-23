@@ -2,6 +2,7 @@ export type Album = {
     userId: number;
     id: number;
     title: string;
+    photos?:Photo[];
 };
 
 export type Photo = {
@@ -15,7 +16,7 @@ export type Photo = {
 export type State = {
     albums: Album[];
     album: Album | null;
-    photos: Photo[];
+    photos:Photo[];
     error: string | null;
     loading: boolean;
 };

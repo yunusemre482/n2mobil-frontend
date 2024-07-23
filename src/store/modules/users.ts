@@ -73,6 +73,8 @@ export const actions = {
     [SET_FETCHED_USER]({commit}: any,payload: any) {
         const user = payload.user as User;
 
+        console.log("setting fetched user", user,payload);
+
         if (user){
             commit(SET_USER, user);
         }

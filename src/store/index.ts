@@ -3,6 +3,7 @@ import VuexPersistence from "vuex-persist";
 import users from "./modules/users";
 import todos from "./modules/todos";
 import posts from "./modules/posts";
+import albums from "./modules/albums";
 
 const vuexLocal = new VuexPersistence({
     storage: window.localStorage,
@@ -14,7 +15,8 @@ export default createStore({
     modules: {
         users,
         todos,
-        posts
+        posts,
+        albums
     },
     strict: debug,
     plugins: debug ? [createLogger(), vuexLocal.plugin] : [vuexLocal.plugin],

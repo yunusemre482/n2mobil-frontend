@@ -12,5 +12,6 @@ export const SET_COMMENTS = "SET_COMMENTS";
 export const SET_COMMENT = "SET_COMMENT";
 export const SET_ALBUMS = "SET_ALBUMS";
 export const SET_ALBUM = "SET_ALBUM";
+export const SET_ALBUM_PHOTOS = "SET_ALBUM_PHOTOS";
 export const SET_PHOTOS = "SET_PHOTOS";
 export const SET_PHOTO = "SET_PHOTO";

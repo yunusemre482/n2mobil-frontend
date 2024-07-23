@@ -1,6 +1,6 @@
 <template>
     <div class="flex w-full max-h-min flex-col p-5 overflow-hidden bg-inherit  gap-10">
-        <go-home />
+        <go-home text="Go Home" />
         <div class="container mx-auto overflow-hidden">
           <TodoList :todos="todos"/>
         </div>
@@ -9,7 +9,7 @@
 
 <script>
 import { defineComponent } from "vue";
-import GoHome from "@/components/GoHome.vue";
+import GoHome from "@/components/GoBack.vue";
 import TodoList from "@/components/todo/TodoList.vue";
 import { FETCH_TODOS } from "@/store/actions";
 import store from "@/store";
