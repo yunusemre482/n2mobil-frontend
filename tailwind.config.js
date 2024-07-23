@@ -123,8 +123,11 @@ export default {
                     800: "#212121",
                     900: "#000000",
                 },
-                icon:{
-                    DEFAULT:"#26303E"
+                icon: {
+                    DEFAULT: "#26303E"
+                },
+                body:{
+                    DEFAULT: "#5C6672",
                 }
             },
         },
