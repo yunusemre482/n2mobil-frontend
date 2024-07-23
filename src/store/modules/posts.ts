@@ -14,9 +14,9 @@ import {FETCH_COMMENTS, FETCH_POST, FETCH_POSTS} from "@/store/actions.ts";
 
 
 export const getters    = {
-    posts: (state: State) => state.posts,
-    comments: (state: State) => state.comments,
-    post:(state: State) => state.post,
+    posts: (state: State) => state.posts as Post[],
+    comments: (state: State) => state.comments as Comment[],
+    post:(state: State) => state.post as Post,
 };
 
 export const mutations = {

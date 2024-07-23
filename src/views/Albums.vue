@@ -28,7 +28,7 @@ export default defineComponent({
       albums: "albums",
     }),
   },
-  beforeRouteEnter(to, from, next) {
+  beforeRouteEnter(to, _, next) {
     const userId = to.params.userId;
     // ...
     Promise.all([store.dispatch(`${FETCH_ALBUMS}`, {userId: userId})]).then(() => {

@@ -1,6 +1,6 @@
 <template>
     <ul class="divide-y divide-gray-light px-4 overflow-y-auto overflow-x-hidden gap-5 flex  flex-col py-5">
-      <li v-for="comment in comments" :key="comment.id">
+      <li v-for="comment in comments" :key="comment">
         <CommentListItem :comment="comment"/>
       </li>
     </ul>

@@ -22,6 +22,7 @@ export default defineComponent({
             users: "users",
         }),
     },
+  // @ts-ignore
     beforeRouteEnter(to, from, next) {
         // ...
         Promise.all([store.dispatch(`${FETCH_USERS}`)]).then(() => {

@@ -14,6 +14,7 @@ export default defineComponent({
       photos: "photos",
     }),
   },
+  // @ts-ignore
   beforeRouteEnter(to, from, next) {
     const albumId = to.params.albumId;
     // ...
