@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="{name: 'Todos', params: { userId: user.id }}"@click="setCurrentUser">
+    <router-link :to="{name: 'Todos', params: { userId: user.id }}" @click="setCurrentUser">
         <div
             class="w-[358.67px] p-5 rounded-tl-[12px] border border-gray-light py-5 px-6 rounded-xl gap-8 flex flex-col hover:shadow-profile cursor-pointer"
         >
