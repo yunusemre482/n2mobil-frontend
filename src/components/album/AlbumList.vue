@@ -1,5 +1,5 @@
 <template>
-  <ul class="container mx-auto lg:gap-10 flex-wrap flex sm:gap-5 items-center lg:justify-start justify-center">
+  <ul class="container grid grid-cols-1 md:grid-cols-2 gap-4 sm:grid-cols-1 lg:grid-cols-3">
     <li v-for="album in albums" :key="album.id">
       <AlbumListCard :album="album"/>
     </li>

@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-full flex flex-col justify-center container p-5">
+    <div class="flex  max-h-min flex-col p-5 overflow-hidden bg-inherit  gap-10">
         <h5 class="mt-5 mb-10 text-xl font-semibold sm:ml-5 lg:ml-2">All Users</h5>
         <UserList :users="users" />
     </div>

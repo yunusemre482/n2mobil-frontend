@@ -1,6 +1,6 @@
 <template>
     <ul
-        class="container mx-auto lg:gap-10 flex-wrap flex md:gap-4 sm:gap-5 items-center justify-start"
+        class="grid grid-cols-1 md:grid-cols-2 lg:gap-10 gap-5 sm:grid-cols-1 lg:grid-cols-3"
     >
         <li v-for="user in users" :key="user.id">
             <UserCard :user="user"/>
