@@ -1,7 +1,7 @@
 <template>
   <router-link :to="{name: 'Photos', params: { albumId: album.id }}" >
     <div
-        class="w-[18rem] p-5 rounded-tl-[12px] border border-gray-light py-5 px-6 rounded-xl gap-8 flex flex-col cursor-pointer">
+        class="w-[20rem] p-5 rounded-tl-[12px] border border-gray-light py-5 px-6 rounded-xl gap-8 flex flex-col cursor-pointer">
 
       <ul class="grid grid-cols-2 grid-rows-2 ">
         <li v-for="photo in photos" :key="photo.id" class="w-full h-full">
