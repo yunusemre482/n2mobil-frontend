@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="{ name: 'Todos', params: { userId: user.id } }">
+    <router-link :to="{name: 'Todos', params: { userId: user.id }}"@click="setCurrentUser">
         <div
             class="w-[358.67px] p-5 rounded-tl-[12px] border border-gray-light py-5 px-6 rounded-xl gap-8 flex flex-col hover:shadow-profile cursor-pointer"
         >
@@ -9,7 +9,7 @@
                     src="@/assets/profile.png"
                 />
                 <div>
-                    <h2 class="text-lg font-medium">{{ user.name }}</h2>
+                    <h2 class="text-lg font-medium text-gray-2">{{ user.name }}</h2>
                     <p class="text-sm text-gray">{{ user.email }}</p>
                     <p class="text-sm text-gray">{{ user.phone }}</p>
                 </div>
@@ -17,21 +17,21 @@
             <div class="flex flex-col gap-4">
                 <div class="flex flex-col gap-2">
                     <div class="flex flex-row gap-3 items-center">
-                        <IconMapPinHeart class="w-6 h-6 text-red text-icon" />
+                        <IconMapPinHeart class="w-6 h-6 text-red text-icon"/>
                         <h6 class="text-sm text-icon">Location</h6>
                     </div>
 
                     <div>
                         <span
                             class="text-sm font-light font-poppins text-gray"
-                            >{{
+                        >{{
                                 user.address.street + " " + user.address.suite
                             }}</span
                         >
-                        <br />
+                        <br/>
                         <span
                             class="text-sm font-light font-poppins text-gray"
-                            >{{
+                        >{{
                                 user.address.city + " " + user.address.zipcode
                             }}</span
                         >
@@ -45,18 +45,18 @@
                         <h6 class="text-sm text-icon">Company</h6>
                     </div>
                     <span class="text-sm font-light text-gray">{{
-                        user.company.name
-                    }}</span>
+                            user.company.name
+                        }}</span>
                 </div>
                 <div class="flex flex-col gap-2">
                     <div class="flex flex-row gap-3 items-center">
-                        <IconWorldShare class="w-6 h-6 text-icon" />
+                        <IconWorldShare class="w-6 h-6 text-icon"/>
                         <h6 class="text-sm text-icon">Company</h6>
                     </div>
 
                     <span class="text-sm font-light text-gray">{{
-                        user.website
-                    }}</span>
+                            user.website
+                        }}</span>
                 </div>
             </div>
         </div>
@@ -64,14 +64,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, defineProps } from "vue";
+import {defineComponent} from "vue";
 import {
     IconMapPinHeart,
     IconBuildingSkyscraper,
     IconWorldShare,
 } from "@tabler/icons-vue";
-import { User } from "@/types/user.types";
-import type { PropType } from "vue";
+import {User} from "@/types/user.types";
+import type {PropType} from "vue";
+import store from "@/store";
+import {SET_FETCHED_USER} from "@/store/actions.ts";
 
 export default defineComponent({
     name: "UserCard",
@@ -85,6 +87,13 @@ export default defineComponent({
             type: Object as PropType<User>,
             required: true,
         },
+    },
+    methods:{
+        // when click user update user in store with selected user
+      setCurrentUser() {
+        store.dispatch(SET_FETCHED_USER,{user: this.user});
+      },
+
     },
     mounted() {
         this.user.email;

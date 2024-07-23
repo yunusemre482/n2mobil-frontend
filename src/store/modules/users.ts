@@ -7,7 +7,7 @@ import {
     SET_USER,
     SET_USERS,
 } from "../mutation";
-import { FETCH_USER, FETCH_USERS } from "../actions";
+import { FETCH_USER, FETCH_USERS,SET_FETCHED_USER } from "../actions";
 
 const initialState: State = {
     users: [],
@@ -20,6 +20,7 @@ export const state = () => ({ ...initialState });
 
 export const getters = {
     users: (state: State) => state.users,
+    user: (state: State) => state.user,
     loading: (state: State) => state.loading,
     error: (state: State) => state.error,
 };
@@ -68,6 +69,14 @@ export const actions = {
 
         commit(SET_USER, response.data);
         commit(SET_LOADING, false);
+    },
+    [SET_FETCHED_USER]({commit}: any,payload: any) {
+        const user = payload.user as User;
+
+        if (user){
+            commit(SET_USER, user);
+        }
+
     },
     [RESET_STATE]({ commit }: any) {
         commit(RESET_STATE);

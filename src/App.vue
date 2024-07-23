@@ -1,26 +1,12 @@
-<template>
-    <layout>
-        <router-view />
-    </layout>
-</template>
-
-<script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import Layout from "./layouts/Layout.vue";
-
-@Options({
-    components: {
-        Layout,
-    },
-})
-export default class App extends Vue {}
+<script setup>
+import SideBar from "@/components/sidebar/SideBar.vue";
+import Layout from "@/layouts/MainLayout.vue";
 </script>
 
-<style>
-#app,
-body {
-    background-color: #f7fafc;
-    width: 100%;
-    height: 100%;
-}
-</style>
+<template>
+    <div id="app">
+        <Layout>
+            <router-view />
+        </Layout>
+    </div>
+</template>

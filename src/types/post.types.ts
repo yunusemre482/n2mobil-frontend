@@ -16,7 +16,7 @@ export type Comment = {
 export type State = {
     posts: Post[];
     post: Post | null;
-    comments: Comment[];
+    comments: Comment[] | null;
     error: string | null;
     loading: boolean;
 };

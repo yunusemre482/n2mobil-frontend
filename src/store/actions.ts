@@ -1,5 +1,6 @@
 export const FETCH_USERS = "FETCH_USERS";
 export const FETCH_USER = "FETCH_USER";
+export const SET_FETCHED_USER = "SET_FETCHED_USER";
 
 export const FETCH_TODOS = "FETCH_TODOS";
 export const FETCH_TODO = "FETCH_TODO";
